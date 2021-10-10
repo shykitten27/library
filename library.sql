@@ -309,7 +309,7 @@ select p.first_name, p.last_name, b.title, g.genres from loan l
     join book b on l.book_id = b.book_id
     join genre g on b.genre_id = g.genre_id
     join patron p on l.patron_id = p.patron_id
-	where b.available = 0
+	where b.available = 0 and l.loan_id is not null
     order by last_name, first_name;
     
 ## counts of books by genres
